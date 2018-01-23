@@ -1,0 +1,42 @@
+<div id="butttonSection" class="pnrSectionDiv">
+	<div class="input-group">
+		<div class="input-group-prepend">
+			<div class="input-group-text" id="btnGroupAddon">PNR Number:</div>
+		</div>
+		<input type="text" class="form-control" ng-model="pnrNumber" placeholder="Enter your PNR No. here" aria-label="Input group example" aria-describedby="btnGroupAddon">
+	</div>
+	<button type="button" class="btn btn-success btn-block" ng-click="showPnrStatus();">Check PNR Status</button>
+</br>
+<div id="pnrResultSection" ng-hide="showPnrDetailsFlag">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm">
+				Boarding Station:
+			</div>
+			<div class="col-sm">
+				{{boardingStation}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm">
+				Destination Station:
+			</div>
+			<div class="col-sm">
+				{{destinationStation}}
+			</div>
+		</div>
+	</div>
+</br>
+<div class="row" ng-repeat="passNum in passengersList">
+	<div class="col-sm">
+		Passenger No : {{$index + 1}}
+	</div>
+	<div class="col-sm">
+		Booking Status : {{passNum.booking_status}}
+	</div>
+	<div class="col-sm">
+		Current Status : {{passNum.current_status}}
+	</div>
+</div>
+</div>
+</div>

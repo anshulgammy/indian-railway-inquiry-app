@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap-grid.css" />
+	<script src="../bower_components/angular/angular.js"></script>
+	<script src="../bower_components/angular-route/angular-route.js"></script>
+	<script src="../bower_components/moment/moment.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/callRailwayApis.js"></script>
+	<title>Railway Inquiry</title>
+	<style>
+	.buttonSectionDiv {
+		width:30%;
+		margin: 0 auto;
+	}
+	.buttonArea {
+		margin-left: 10%;
+	}
+	.pnrSectionDiv {
+		width:50%;
+		margin: 0 auto;
+	}
+	.row {
+		background-color: #e9ecef;
+	}
+</style>
+</head>
+<body ng-app="railwayApp" ng-controller="initialController">
+	<div class="container-fluid">
+		<div class="alert alert-primary" role="alert">
+			<center>Railway Inquiry</center>
+		</div>
+		<div id="butttonSection" class="buttonSectionDiv">
+			<span class="buttonArea"><a href="#!formEntry" class="btn btn-success btn-block">PNR Status</a></span>
+			<span class="buttonArea"><a href="#!liveTrainStatus" class="btn btn-success btn-block">Live Train Status</a></span>
+			<span class="buttonArea"><a class="btn btn-success btn-block">Train Between Stations</a></span>
+		</div>
+		<div id="dynamicSeection" ng-view>
+			
+		</div>
+	</div>
+</body>
+</html>

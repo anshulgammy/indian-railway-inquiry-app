@@ -1,0 +1,58 @@
+<div id="butttonSection" class="pnrSectionDiv">
+	<div class="input-group">
+		<div class="input-group-prepend">
+			<div class="input-group-text" id="btnGroupAddon">Train Number:</div>
+		</div>
+		<input type="text" class="form-control" ng-model="trainNumber" placeholder="Enter your Train No. here" aria-label="Input group example" aria-describedby="btnGroupAddon">
+	</div>
+	<div class="input-group">
+		<div class="input-group-prepend">
+			<div class="input-group-text" id="btnGroupAddon">Date:</div>
+		</div>
+		<input type="date" class="form-control" ng-model="dateString" placeholder="dd-mm-yyyy" aria-label="Input group example" aria-describedby="btnGroupAddon">
+	</div>
+	<button type="button" class="btn btn-success btn-block" ng-click="showTrainDetails();">Check Details</button>
+</br>
+<div id="trainLiveStatusSection" ng-hide="showLiveTrainFlag">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm">
+				Current Station:
+			</div>
+			<div class="col-sm">
+				{{currentStation}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm">
+				Current Status:
+			</div>
+			<div class="col-sm">
+				{{currentPosition}}
+			</div>
+		</div></br>
+		<div class="row">
+			<div class="col-sm">
+				<b>Enroute Station</b>
+			</div>
+			<div class="col-sm">
+				<b>Scheduled Departure</b>
+			</div>
+			<div class="col-sm">
+				<b>Actual Departure</b>
+			</div>
+		</div>
+		<div class="row" ng-repeat="route in trainRoute">
+			<div class="col-sm">
+				{{route.station.name}}
+			</div>
+			<div class="col-sm">
+				{{route.schdep}}
+			</div>
+			<div class="col-sm">
+				{{route.actdep}}
+			</div>
+		</div>
+	</div>
+</div>
+</div>
